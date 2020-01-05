@@ -1,0 +1,45 @@
+# Maintainer: KayleeTheMech <kaylee@posteo.de>
+pkgname=exiftool
+_fullprogname="Image-ExifTool"
+pkgver=11.81
+pkgrel=1
+epoch=
+pkgdesc="a platform-independent Perl library plus a command-line application for reading, writing and editing meta information in a wide variety of files."
+arch=(x86_64)
+url="https://exiftool.org/"
+license=('GPL')
+groups=()
+depends=('perl>=5.30.1')
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("https://exiftool.org/Image-ExifTool-11.81.tar.gz")
+sha256sums=("6784b85230b430ef357f80f729db858f9edd7664253210944d426b84515e03c0")
+noextract=()
+
+prepare() {
+	cd "$srcdir/$_fullprogname-$pkgver"
+	perl Makefile.PL
+}
+
+build() {
+	cd "$srcdir/$_fullprogname-$pkgver"
+	make
+}
+
+check() {
+        cd "$srcdir/$_fullprogname-$pkgver"
+        make test
+}
+
+package() {
+	cd "$srcdir/$_fullprogname-$pkgver"
+	make DESTDIR="$pkgdir/" install
+}

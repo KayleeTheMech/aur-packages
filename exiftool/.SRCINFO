@@ -1,0 +1,13 @@
+pkgbase = exiftool
+	pkgdesc = a platform-independent Perl library plus a command-line application for reading, writing and editing meta information in a wide variety of files.
+	pkgver = 11.81
+	pkgrel = 1
+	url = https://exiftool.org/
+	arch = x86_64
+	license = GPL
+	depends = perl>=5.30.1
+	source = https://exiftool.org/Image-ExifTool-11.81.tar.gz
+	sha256sums = 6784b85230b430ef357f80f729db858f9edd7664253210944d426b84515e03c0
+
+pkgname = exiftool
+
